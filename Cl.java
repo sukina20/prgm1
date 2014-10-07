@@ -6,7 +6,7 @@ public class Cl
 {
         public static void main(String args[])throws IOException,NotBoundException
         {
-                F1 a=(F1)Naming.lookup("//192.168.0.16/localhost");
+                F1 a=(F1)Naming.lookup("//192.168.0.20/localhost");
                 InputStreamReader isr=new InputStreamReader(System.in);
                 BufferedReader br=new BufferedReader(isr);
                 BufferedReader br2=new BufferedReader(isr);
