@@ -6,16 +6,68 @@ public class Cl
 {
         public static void main(String args[])throws IOException,NotBoundException
         {
-                F1 a=(F1)Naming.lookup("//192.168.0.20/localhost");
-                InputStreamReader isr=new InputStreamReader(System.in);
-                BufferedReader br=new BufferedReader(isr);
-                BufferedReader br2=new BufferedReader(isr);
-                String s1=br.readLine();
-                String s2=br2.readLine();
-                a.cmpr(s1,s2);
-                a.rvs(s1,s2);
-                a.ct(s1,s2);
-                a.cs(s1,s2);
-        }
-}
+            int com;
+		String rev1,ct1,cs1;    
+                F1 a=(F1)Naming.lookup("//192.168.0.18/localhost");
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String s1,s2;
+		do
+		{
+		System.out.println("1).COMPARISON \t 2).REVERSE \t3).CONCATINATION\t4).LOWERCASE\t 5).UPPERCASE\t 6).EXIT\n");
+		System.out.println("Enter your choice");
+		int n=Integer.parseInt(br.readLine());
+                switch(n)
+		{
+		case 1:
+			System.out.println("Enter the first string");
+			s1=br.readLine();
+			System.out.println("Enter the second  string");
+			s2=br.readLine();
+			com=a.cmpr(s1,s2);
+                        if(com==1)
+                        {
+                             System.out.println("equal");
+                        }
+                        else
+                        {
+                            System.out.println("not equal");
+                         }
+			break;
+                case 2:
+		 	System.out.println("Enter the  string");
+                  	s1=br.readLine();
+		 	rev1=a.rvs(s1);
+			System.out.println("Reverse of  string:"+rev1);
+			break;
+		case 3:
+		 	System.out.println("Enter the first string");
+                  	s1=br.readLine();
+			System.out.println("Enter the second  string");
+                	s2=br.readLine();
+		 	ct1=a.ct(s1,s2);
+			System.out.println("concat:"+ct1);
+			break;
+		case 4:
+		 	System.out.println("Enter the  string");
+                  	s1=br.readLine();
+			
+                	cs1=a.cs(s1);
+			System.out.println("lowercase:"+cs1);
+                	break;
 
+		case 5:
+			System.out.println("Enter the  string");
+                        s1=br.readLine();
+			cs2=a.cs1(s1);
+			System.out.println("Uppercase:"+cs2);
+                        break;
+
+              case 6:	
+			a.close(); 
+			default:System.out.println("wrong choice");
+			break;
+            
+              }
+		}while(true);
+}
+}
