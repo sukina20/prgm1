@@ -6,9 +6,9 @@ public class Cl
 {
         public static void main(String args[])throws IOException,NotBoundException
         {
-            int com;
-		String rev1,ct1,cs1;    
-                F1 a=(F1)Naming.lookup("//192.168.0.18/localhost");
+            	int com;
+		String rev1,ct1,cs1,cs2;    
+                F1 a=(F1)Naming.lookup("//192.168.0.11/localhost");
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		String s1,s2;
 		do
@@ -26,12 +26,17 @@ public class Cl
 			com=a.cmpr(s1,s2);
                         if(com==1)
                         {
-                             System.out.println("equal");
+				System.out.println("First string is greater");
                         }
-                        else
+                        else if(com==-1)
                         {
-                            System.out.println("not equal");
-                         }
+				System.out.println(" Second string is greater");
+		
+                        }
+			else
+			{
+				System.out.println("Strings are equal");
+			}					
 			break;
                 case 2:
 		 	System.out.println("Enter the  string");
@@ -64,7 +69,8 @@ public class Cl
 
               case 6:	
 			a.close(); 
-			default:System.out.println("wrong choice");
+			break;
+	      default:  System.out.println("wrong choice");
 			break;
             
               }
